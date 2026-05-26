@@ -22,13 +22,25 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 ### Focal Point — multi-tenant ERP SaaS with WhatsApp AI agents
 
-*Co-founder & CTO.* Production multi-tenant ERP SaaS. Schema-per-tenant architecture with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph-based agent that answers customers and creates quotes over WhatsApp.
+*Founding Engineer.* Production multi-tenant ERP SaaS. Schema-per-tenant architecture with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph-based agent that answers customers and creates quotes over WhatsApp. I co-founded Focal Point with my partners and led engineering end-to-end.
 
 **Stack** · Django 5.2 · DRF · Channels · PostgreSQL 17 (`django-tenants`) · Valkey/Redis · LangGraph + OpenAI · Meta WhatsApp Cloud API · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES) · Terraform · Sentry + Prometheus + Grafana
 
 **Why it's interesting** · Real multi-tenant isolation (PostgreSQL schemas, not `tenant_id` columns). SIFEN integration as a bounded context. Per-tenant AI cost tracking. EC2 + Terraform sized to the actual problem.
 
 [Read the case study →](https://github.com/FrancoCazal/focalpoint-case-study)
+
+---
+
+### AgroBuy — AI procurement copilot for agricultural cooperatives
+
+*🏆 1st place — AI Tinkerers San Lorenzo x FIUNA Deep Dive Hackathon 2026.* Backend, AI orchestration, and the ML/scoring layer. AgroBuy turns manual supplier-quotation comparison into an AI-assisted workflow: four specialized LangGraph agents (extraction, comparison, recommendation, negotiation), a supplier-reliability classifier, and explainable composite scoring grounded in live weather and exchange-rate data.
+
+**Stack** · Python · FastAPI · LangGraph (4 LLM agents) · scikit-learn (`GradientBoostingClassifier`) · PostgreSQL · Redis · ARQ workers · React 19 · Oracle APEX · Docker
+
+**Why it's interesting** · Honest, verifiable ML (supplier on-time classifier at AUC 0.748, with a rules-based baseline) — not decorative. Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. Dual urgency/offer scoring exposes its full breakdown — auditable, not a black box. One API, two interchangeable clients (React + Oracle APEX) with zero schema duplication.
+
+[Read the case study →](https://github.com/FrancoCazal/agrobuy-case-study)
 
 ---
 
@@ -109,4 +121,4 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 
 ---
 
-<sub>This is my portfolio repo — depth on featured work. For the quick view see <a href="https://github.com/FrancoCazal">my profile</a>. For the full experience see <a href="https://francocazal.com">francocazal.com</a>. The featured projects each link to their own repo (or, for Focal Point, a public case study — the source code is private).</sub>
+<sub>This is my portfolio repo — depth on featured work. For the quick view see <a href="https://github.com/FrancoCazal">my profile</a>. For the full experience see <a href="https://francocazal.com">francocazal.com</a>. The featured projects each link to their own repo (or, for Focal Point and AgroBuy, a public case study — the source code is private).</sub>
