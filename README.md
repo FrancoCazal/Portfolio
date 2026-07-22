@@ -106,7 +106,7 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 
 - AWS Certified Cloud Practitioner · 2026
 - AWS Certified AI Practitioner · exam July 2026
-- AWS Solutions Architect Associate · in progress · 2026
+- AWS Solutions Architect Associate · in progress
 - AWS for Startups · credit on Focal Point
 - AWS UG Paraguay · volunteer
 - Cloud Computing (AWS) · CoderHouse · 2024
