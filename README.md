@@ -1,6 +1,6 @@
 # Franco Cazal
 
-**Backend & AI Engineer. I design and ship scalable, production-grade systems on AWS — with a custom agent harness I built for AI-augmented dev.**
+**AI Engineer · Agentic Systems & RAG. I design and ship scalable, production-grade systems on AWS, with a custom agent harness I built for AI-augmented dev.**
 
 Python · Django · FastAPI · PostgreSQL · AWS · Terraform · LangGraph · RAG
 
@@ -22,7 +22,7 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 ### Focal Point — multi-tenant ERP SaaS with WhatsApp AI agents
 
-*Founding Engineer.* Production multi-tenant ERP SaaS. Schema-per-tenant architecture with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph-based agent that answers customers and creates quotes over WhatsApp. I co-founded Focal Point with my partners and led engineering end-to-end.
+*Co-founder & Founding Engineer · Dec 2023 – Mar 2026.* Production multi-tenant ERP SaaS. Schema-per-tenant architecture with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph-based agent that answers customers and creates quotes over WhatsApp. I co-founded Focal Point with my partners and led engineering end-to-end.
 
 **Stack** · Django 5.2 · DRF · Channels · PostgreSQL 17 (`django-tenants`) · Valkey/Redis · LangGraph + OpenAI · Meta WhatsApp Cloud API · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES) · Terraform · Sentry + Prometheus + Grafana
 
@@ -94,7 +94,7 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 - Python · Cloud Computing (AWS)
 
 **Current depth**
-- Anthropic Academy — 13 courses (Claude API, Claude Code, MCP, agent design)
+- Anthropic Academy: Claude API, Claude Code, MCP, agent design (2025)
 
 **Self-taught**
 - Django REST Framework · FastAPI · LangGraph / LangChain · GraphQL
@@ -104,6 +104,8 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 
 ## AWS ecosystem
 
+- AWS Certified Cloud Practitioner · 2026
+- AWS Certified AI Practitioner · exam July 2026
 - AWS Solutions Architect Associate · in progress · 2026
 - AWS for Startups · credit on Focal Point
 - AWS UG Paraguay · volunteer
