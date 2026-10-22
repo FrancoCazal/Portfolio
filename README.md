@@ -58,11 +58,11 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 ### AgroBuy · AI procurement copilot for agricultural cooperatives
 
-*🏆 1st place · AI Tinkerers San Lorenzo x FIUNA Deep Dive Hackathon 2026.* Backend, AI orchestration, and the ML/scoring layer. AgroBuy turns manual supplier-quotation comparison into an AI-assisted workflow: four specialized LangGraph agents (extraction, comparison, recommendation, negotiation), a supplier-reliability classifier, and explainable composite scoring grounded in live weather and exchange-rate data.
+*🏆 1st place · AI Tinkerers San Lorenzo x FIUNA Deep Dive Hackathon 2026.* Backend, AI orchestration, and the ML/scoring layer. AgroBuy turns manual supplier-quotation comparison into an AI-assisted workflow: four specialized LLM agents (extraction, comparison, recommendation, negotiation) run by a plain Python orchestrator, a supplier-reliability classifier, and explainable composite scoring grounded in live weather and exchange-rate data.
 
-**Stack** · Python · FastAPI · LangGraph (4 LLM agents) · scikit-learn (`GradientBoostingClassifier`) · PostgreSQL · Redis · ARQ workers · React 19 · Oracle APEX · Docker
+**Stack** · Python · FastAPI · 4 LLM agents with deterministic fallbacks · scikit-learn (`GradientBoostingClassifier`) · PostgreSQL · React 19 · Oracle APEX (build guide) · Docker
 
-**Why it's interesting** · The supplier on-time classifier scores AUC 0.748 on a held-out split of a synthetic delivery history (the demo has no real supplier records), with a rules-based fallback when no model is loaded. Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. Dual urgency/offer scoring exposes its full breakdown, fully auditable. One API, two interchangeable clients (React + Oracle APEX) with zero schema duplication.
+**Why it's interesting** · The supplier on-time classifier scores AUC 0.748 on a held-out split of a synthetic delivery history (the demo has no real supplier records), with a rules-based fallback when no model is loaded. Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. Dual urgency/offer scoring exposes its full breakdown, fully auditable. One API designed for two clients: the React app and Oracle APEX, whose build guide is in the repo.
 
 [Repo →](https://github.com/FrancoCazal/AgroBuy)
 
