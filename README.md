@@ -32,6 +32,30 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 ---
 
+### SilentOps · shift-handover agent for cold-chain operations
+
+*AI Tinkerers Agents, Everywhere global hackathon · Sep 2026 · team of four. My part (R1): the detector, the agent loop, prompts, read tools, provider fallback and the eval harness.* Lives in the operations Slack of a refrigerated logistics hub. A deterministic detector finds the shift handover that was never written and records the evidence of that absence; an agent proposes a sourced handover document, work-order reassignments and the Slack notice. Nothing is written until a supervisor approves.
+
+**Stack** · TypeScript · Node.js · CopilotKit (Channels, BuiltInAgent) · Slack · MCP (Ambiguous workspace) · Auth0 M2M · Gemini 2.5 Flash with Pro fallback · Next.js
+
+**Why it's interesting** · The model cannot write: its only action tool is `propose_action`, and every write crosses one boundary with an Auth0 scope per action and an idempotency key, so a replayed approval executes nothing. Evals reported honestly: the 15 golden cases pass 15/15 against a scripted model and 5/15 against Gemini 2.5 Flash, stated separately. 310 offline tests, CI on every push.
+
+[Repo →](https://github.com/FrancoCazal/SilentOps)
+
+---
+
+### Blindside · perishable demand forecasting that recovers censored demand
+
+*Capstone · FIUNA Applied Machine Learning & Deep Learning Diploma · 2026.* Forecasts demand per store and product for perishables. It first recovers the demand hidden by stockouts (sales read zero, demand was not), then turns the forecast into an order quantity at the critical fractile `q* = Cu / (Cu + Co)`.
+
+**Stack** · Python · LightGBM (one global quantile model over 3,066 series) · conformalized quantile regression · FastAPI · Streamlit · React · Docker
+
+**Why it's interesting** · Beats seasonal naive by 25.3% on MASE (the goal was 20%). CQR intervals cover 88.0% at a 90% target and are 53% narrower than residual conformal, which over-covers at 98.7%. Correcting the censoring raises the order by 27.3%. 320 tests, including leakage tests that caught real bugs in this code. Negative results (a hyperparameter search that changed nothing, clustering) are published, not hidden.
+
+[Repo →](https://github.com/FrancoCazal/Blindside)
+
+---
+
 ### AgroBuy · AI procurement copilot for agricultural cooperatives
 
 *🏆 1st place · AI Tinkerers San Lorenzo x FIUNA Deep Dive Hackathon 2026.* Backend, AI orchestration, and the ML/scoring layer. AgroBuy turns manual supplier-quotation comparison into an AI-assisted workflow: four specialized LangGraph agents (extraction, comparison, recommendation, negotiation), a supplier-reliability classifier, and explainable composite scoring grounded in live weather and exchange-rate data.
@@ -48,11 +72,11 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 Full-stack ecommerce with Django REST Framework + React. JWT via HttpOnly cookies, Redis-backed cart, Stripe Checkout, async order processing with Celery, transactional email via SendGrid, S3 media, brutalist design system.
 
-**Stack** · Django 5 · DRF · PostgreSQL · Redis · Celery · Stripe · SendGrid · AWS S3 · React 18 + TypeScript · Vite · TanStack Query · Tailwind · Radix UI · Railway · Vercel
+**Stack** · Django 5 · DRF · PostgreSQL · Redis · Celery · Stripe · SendGrid · AWS S3 · React 18 + TypeScript · Vite · TanStack Query · Tailwind · Radix UI · Docker · Vercel
 
 **Why it's interesting** · 93 tests, 84% coverage, CI on every PR. Atomic order creation with `select_for_update()` prevents overselling. `TimestampSigner`-based email verification and password reset: no token table, no cleanup job.
 
-[Live demo](https://urbanattic.vercel.app) · [Repo →](https://github.com/FrancoCazal/UrbanAttic)
+[Repo →](https://github.com/FrancoCazal/UrbanAttic) · live demo offline while the backend moves hosts
 
 ---
 
