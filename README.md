@@ -86,7 +86,7 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 
 **Stack** · FastAPI · PostgreSQL + pgvector · LangGraph · Gemini (Vertex AI) + AWS Bedrock (Claude) · OpenAI embeddings · Twilio (WhatsApp) · React + TanStack Router · structlog · Prometheus
 
-**Why it's interesting** · Hybrid retrieval (vector + BM25 + RRF + optional cross-encoder rerank + MMR). Gemini for cheap hot-path nodes, Bedrock for grounded generation. 50-query golden eval set with LLM-as-judge, retrieval precision/recall@k, latency, USD cost. Per-call cost is persisted at request time.
+**Why it's interesting** · Hybrid retrieval (vector + BM25 + RRF + optional cross-encoder rerank + MMR). Gemini for cheap hot-path nodes, Bedrock for grounded generation. 50-query golden eval set with LLM-as-judge: the last full run scored 96% accuracy with a 6% hallucination rate, 91.5% / 92.1% retrieval precision/recall@k, 9.1 s p95 latency and $0.63 for the whole set. That is one run of a stochastic pipeline; the seven full runs that day ranged from 80% to 96% accuracy. Per-call cost is persisted at request time.
 
 [Repo →](https://github.com/FrancoCazal/WhisperDocs)
 
