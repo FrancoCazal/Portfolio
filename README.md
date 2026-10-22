@@ -1,6 +1,6 @@
 # Franco Cazal
 
-**AI Engineer · Agentic Systems & RAG. I design and ship scalable, production-grade systems on AWS, with a custom agent harness I built for AI-augmented dev.**
+**AI & ML Engineer · applied AI: agentic systems & RAG in production. I design and ship scalable, production-grade systems on AWS, with a custom agent harness I built for AI-augmented dev.**
 
 Python · Django · FastAPI · PostgreSQL · AWS · Terraform · LangGraph · RAG
 
