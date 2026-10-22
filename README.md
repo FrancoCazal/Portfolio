@@ -88,7 +88,7 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 
 **Industrial Engineering** · FIUNA · in progress (since 2022)
 
-**Diploma in Machine Learning & Deep Learning** · FIUNA · in progress · 2026 · 4 months
+**Diploma in Machine Learning & Deep Learning** · FIUNA · completed · 2026 · final project: [Blindside](https://github.com/FrancoCazal/Blindside)
 
 **Foundations** · CoderHouse · 2024
 - Python · Cloud Computing (AWS)
