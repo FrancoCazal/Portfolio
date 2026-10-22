@@ -4,7 +4,7 @@
 
 Python · Django · FastAPI · PostgreSQL · AWS · Terraform · LangGraph · RAG
 
-Lambaré, Paraguay · Remote-friendly · [francocazal.com](https://francocazal.com) · [LinkedIn](https://www.linkedin.com/in/franco-cazal) · [GitHub](https://github.com/FrancoCazal) · contact@francocazal.com
+Lambaré, Paraguay · Remote-friendly · [francocazal.com](https://francocazal.com) · [LinkedIn](https://www.linkedin.com/in/francocazal) · [GitHub](https://github.com/FrancoCazal) · contact@francocazal.com
 
 ---
 
@@ -141,7 +141,7 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 ## Contact
 
 - Email · [contact@francocazal.com](mailto:contact@francocazal.com)
-- LinkedIn · [linkedin.com/in/franco-cazal](https://www.linkedin.com/in/franco-cazal)
+- LinkedIn · [linkedin.com/in/francocazal](https://www.linkedin.com/in/francocazal)
 - GitHub · [@FrancoCazal](https://github.com/FrancoCazal)
 - Portfolio site · [francocazal.com](https://francocazal.com)
 
