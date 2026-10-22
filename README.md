@@ -62,9 +62,9 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 **Stack** · Python · FastAPI · LangGraph (4 LLM agents) · scikit-learn (`GradientBoostingClassifier`) · PostgreSQL · Redis · ARQ workers · React 19 · Oracle APEX · Docker
 
-**Why it's interesting** · Honest, verifiable ML (supplier on-time classifier at AUC 0.748, with a rules-based baseline). Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. Dual urgency/offer scoring exposes its full breakdown, fully auditable. One API, two interchangeable clients (React + Oracle APEX) with zero schema duplication.
+**Why it's interesting** · The supplier on-time classifier scores AUC 0.748 on a held-out split of a synthetic delivery history (the demo has no real supplier records), with a rules-based fallback when no model is loaded. Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. Dual urgency/offer scoring exposes its full breakdown, fully auditable. One API, two interchangeable clients (React + Oracle APEX) with zero schema duplication.
 
-[Read the case study →](https://github.com/FrancoCazal/agrobuy-case-study)
+[Repo →](https://github.com/FrancoCazal/AgroBuy)
 
 ---
 
