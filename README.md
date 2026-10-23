@@ -1,20 +1,42 @@
 # Franco Cazal
 
-**AI & ML Engineer · applied AI: agentic systems & RAG in production. I design and ship scalable, production-grade systems on AWS, with a custom agent harness I built for AI-augmented dev.**
+**AI & ML Engineer · applied AI: agentic systems & RAG in production**
 
-Python · Django · FastAPI · PostgreSQL · AWS · Terraform · LangGraph · RAG
+I take applied AI from prototype to production: agents and RAG measured with evals, ML models measured against baselines, and the Python backends and AWS infrastructure they run on.
 
-Lambaré, Paraguay · Remote-friendly · [francocazal.com](https://francocazal.com) · [LinkedIn](https://www.linkedin.com/in/francocazal) · [GitHub](https://github.com/FrancoCazal) · contact@francocazal.com
+Lambaré, Paraguay · GMT-3 · remote · [francocazal.com](https://francocazal.com) · [LinkedIn](https://www.linkedin.com/in/francocazal) · [GitHub](https://github.com/FrancoCazal) · contact@francocazal.com
 
 ---
 
 ## About
 
-Multi-tenant SaaS, agentic AI workflows, ecommerce: owned end-to-end from data model to deploy. I work AI-augmented, with a customized agent harness as daily-driver tooling.
+I'm Franco Cazal, an AI & ML engineer. I build applied AI that holds up in production, and I own it end to end, from the data model and the evals to the deploy.
 
-I'm backend-first, but ship the full stack when needed: React + TypeScript frontends for [UrbanAttic](#urbanattic--ecommerce-platform) and [WhisperDocs](#whisperdocs--agentic-rag-over-your-documents), Django Channels for real-time, and Next.js for marketing surfaces.
+Based in Lambaré, Paraguay (GMT-3), working remote; most of my work is async with US and Spanish-speaking teams. Open to AI & ML, AI backend and cloud engineering roles. English (C2) · Spanish (native).
 
-I care about the boring parts: tenant isolation, observability from day one, cost-aware AI, deploys that don't surprise you on a Friday.
+Daily driver: Claude Code with my own harness (sub-agents, hooks, MCP servers and skills). The public repos below were built with it.
+
+---
+
+## Stack by domain
+
+| Domain | What | Proof |
+|---|---|---|
+| AI | LangGraph agents, hybrid RAG (pgvector + BM25), golden-set evals, cost-aware model routing (Bedrock and Vertex AI in WhisperDocs) | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [SilentOps](https://github.com/FrancoCazal/SilentOps) |
+| ML | scikit-learn, gradient boosting (LightGBM), conformal prediction, rolling-origin backtests with leakage tests | [Blindside](https://github.com/FrancoCazal/Blindside) · [AgroBuy](https://github.com/FrancoCazal/AgroBuy) |
+| Backend | Python (FastAPI, Django, Celery), PostgreSQL, Redis, schema-per-tenant isolation | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+| Cloud | AWS (EC2, RDS, S3, SES) provisioned with Terraform, Docker, GitHub Actions | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+| Front | React + TypeScript, when the product needs a front | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [Blindside](https://github.com/FrancoCazal/Blindside) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+
+---
+
+## Experience
+
+**Co-founder & Founding Engineer · Focal Point** · Dec 2023 – Mar 2026
+Multi-tenant ERP SaaS with production-grade agentic AI workflows. The company continues; my full-time tenure ended in March 2026.
+
+**Freelance · Custom Platforms & Web** · Dec 2023 – now
+Custom software platforms for public and private institutions, built end to end: data model, backend, working frontends, data integration and ETL pipelines, deploys. Plus web development: websites and landing pages for businesses.
 
 ---
 
@@ -22,119 +44,110 @@ I care about the boring parts: tenant isolation, observability from day one, cos
 
 ### Focal Point · multi-tenant ERP SaaS with WhatsApp AI agents
 
-*Co-founder & Founding Engineer · Dec 2023 – Mar 2026.* Production multi-tenant ERP SaaS. Schema-per-tenant architecture with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph-based agent that answers customers and creates quotes over WhatsApp. I co-founded Focal Point with my partners and led engineering end-to-end.
+*Co-founder & Founding Engineer · Dec 2023 – Mar 2026 · production.* Schema-per-tenant ERP with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph agent that answers customers and creates quotes over WhatsApp. I co-founded Focal Point with my partners and led engineering end to end.
 
-**Stack** · Django 5.2 · DRF · Channels · PostgreSQL 17 (`django-tenants`) · Valkey/Redis · LangGraph + OpenAI · Meta WhatsApp Cloud API · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES) · Terraform · Sentry + Prometheus + Grafana
+**Stack** · Django 5 · DRF · Channels · Next.js · PostgreSQL 17 (`django-tenants`) · Valkey/Redis · LangGraph + OpenAI · Meta WhatsApp Cloud API · PagoPar · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES) · Terraform · GitHub Actions · Sentry + Prometheus + Grafana
+
+**Result** · Live in production with real businesses. Five subscriptions replaced by one product, and a customer-facing agent available 24/7.
 
 **Why it's interesting** · Real multi-tenant isolation (PostgreSQL schemas instead of `tenant_id` columns). SIFEN integration as a bounded context. Per-tenant AI cost tracking. EC2 + Terraform sized to the actual problem.
 
-[Read the case study →](https://github.com/FrancoCazal/focalpoint-case-study)
-
----
-
-### SilentOps · shift-handover agent for cold-chain operations
-
-*AI Tinkerers Agents, Everywhere global hackathon · Sep 2026 · team of four. My part (R1): the detector, the agent loop, prompts, read tools, provider fallback and the eval harness.* Lives in the operations Slack of a refrigerated logistics hub. A deterministic detector finds the shift handover that was never written and records the evidence of that absence; an agent proposes a sourced handover document, work-order reassignments and the Slack notice. Nothing is written until a supervisor approves.
-
-**Stack** · TypeScript · Node.js · CopilotKit (Channels, BuiltInAgent) · Slack · MCP (Ambiguous workspace) · Auth0 M2M · Gemini 2.5 Flash with Pro fallback · Next.js
-
-**Why it's interesting** · The model cannot write: its only action tool is `propose_action`, and every write crosses one boundary with an Auth0 scope per action and an idempotency key, so a replayed approval executes nothing. Evals reported honestly: the 15 golden cases pass 15/15 against a scripted model and 5/15 against Gemini 2.5 Flash, stated separately. 310 offline tests, CI on every push.
-
-[Repo →](https://github.com/FrancoCazal/SilentOps)
+[Read the case study →](https://github.com/FrancoCazal/focalpoint-case-study) (the source code is private)
 
 ---
 
 ### Blindside · perishable demand forecasting that recovers censored demand
 
-*Capstone · FIUNA Applied Machine Learning & Deep Learning Diploma · 2026.* Forecasts demand per store and product for perishables. It first recovers the demand hidden by stockouts (sales read zero, demand was not), then turns the forecast into an order quantity at the critical fractile `q* = Cu / (Cu + Co)`.
+*Capstone · FIUNA Applied Machine Learning & Deep Learning Diploma · 2026 · solo.* Forecasts demand per store and product for perishables. It first recovers the demand hidden by stockouts (sales read zero, demand was not), then turns the forecast into an order quantity at the critical fractile `q* = Cu / (Cu + Co)`, inside a calibrated conformal band.
 
 **Stack** · Python · LightGBM (one global quantile model over 3,066 series) · conformalized quantile regression · FastAPI · Streamlit · React · Docker
 
-**Why it's interesting** · Beats seasonal naive by 25.3% on MASE (the goal was 20%). CQR intervals cover 88.0% at a 90% target and are 53% narrower than residual conformal, which over-covers at 98.7%. Correcting the censoring raises the order by 27.3%. 320 tests, including leakage tests that caught real bugs in this code. Negative results (a hyperparameter search that changed nothing, clustering) are published, not hidden.
+**Result** · MASE 0.8217 over 8 rolling origins and 3,066 series: 25.3% better than seasonal naive against a declared 20% goal, worst origin 0.8790. The 90% CQR interval covers 88.0% with a band 53% narrower than residual conformal. Training on recovered demand cuts the re-censored bias from −18.19% to −6.61%.
+
+**Why it's interesting** · 320 tests, including leakage tests that caught real bugs in this code. Negative results (a hyperparameter search that changed nothing, clustering) are published, not hidden.
 
 [Repo →](https://github.com/FrancoCazal/Blindside)
 
 ---
 
-### AgroBuy · AI procurement copilot for agricultural cooperatives
+### SilentOps · shift-handover agent for cold-chain operations
 
-*🏆 1st place · AI Tinkerers San Lorenzo x FIUNA Deep Dive Hackathon 2026.* Backend, AI orchestration, and the ML/scoring layer. AgroBuy turns manual supplier-quotation comparison into an AI-assisted workflow: four specialized LLM agents (extraction, comparison, recommendation, negotiation) run by a plain Python orchestrator, a supplier-reliability classifier, and explainable composite scoring grounded in live weather and exchange-rate data.
+*AI Tinkerers Agents, Everywhere global hackathon · Sep 2026 · team of four. My part (R1): the detector, the agent loop, prompts, read tools, provider fallback and the eval harness, plus the spec and the frozen contracts.* Lives in the operations Slack of a refrigerated logistics hub. A deterministic detector finds the shift handover that was never written and records the evidence of that absence; an agent proposes a sourced handover document, work-order reassignments and the Slack notice. Nothing is written until a supervisor approves.
 
-**Stack** · Python · FastAPI · 4 LLM agents with deterministic fallbacks · scikit-learn (`GradientBoostingClassifier`) · PostgreSQL · React 19 · Oracle APEX (build guide) · Docker
+**Stack** · TypeScript · Node.js · CopilotKit (Channels, BuiltInAgent) · Slack · MCP (Ambiguous workspace) · Auth0 M2M · Gemini 2.5 Flash with Pro fallback · Next.js
 
-**Why it's interesting** · The supplier on-time classifier scores AUC 0.748 on a held-out split of a synthetic delivery history (the demo has no real supplier records), with a rules-based fallback when no model is loaded. Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. Dual urgency/offer scoring exposes its full breakdown, fully auditable. One API designed for two clients: the React app and Oracle APEX, whose build guide is in the repo.
+**Result** · The full loop ran end to end against the live workspace with Gemini 2.5 Flash, and replaying an approval executed nothing twice. The 15-case golden set passes 15/15 against a scripted model and 5/15 against Gemini 2.5 Flash, reported separately.
 
-[Repo →](https://github.com/FrancoCazal/AgroBuy)
+**Why it's interesting** · The model cannot write: its only action tool is `propose_action`, and every write crosses one boundary with an Auth0 scope per action and an idempotency key. 310 offline tests, CI on every push.
 
----
-
-### UrbanAttic · ecommerce platform
-
-Full-stack ecommerce with Django REST Framework + React. JWT via HttpOnly cookies, Redis-backed cart, Stripe Checkout, async order processing with Celery, transactional email via SendGrid, S3 media, brutalist design system.
-
-**Stack** · Django 5 · DRF · PostgreSQL · Redis · Celery · Stripe · SendGrid · AWS S3 · React 18 + TypeScript · Vite · TanStack Query · Tailwind · Radix UI · Docker · Vercel
-
-**Why it's interesting** · 93 tests, 84% coverage, CI on every PR. Atomic order creation with `select_for_update()` prevents overselling. `TimestampSigner`-based email verification and password reset: no token table, no cleanup job.
-
-[Repo →](https://github.com/FrancoCazal/UrbanAttic) · live demo offline while the backend moves hosts
+[Repo →](https://github.com/FrancoCazal/SilentOps)
 
 ---
 
 ### WhisperDocs · agentic RAG over your documents
 
-Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-provider LLM routing, token-level SSE streaming, and a real eval suite.
+*Solo · built April–May 2026 · published as a snapshot · runs locally with Docker Compose.* Document Q&A from a chat UI or WhatsApp, with an explicit LangGraph state machine, hybrid retrieval, per-node model routing and token-level SSE streaming. It cites every claim to a retrieved chunk and refuses when the documents do not hold the answer.
 
 **Stack** · FastAPI · PostgreSQL + pgvector · LangGraph · Gemini (Vertex AI) + AWS Bedrock (Claude) · OpenAI embeddings · Twilio (WhatsApp) · React + TanStack Router · structlog · Prometheus
 
-**Why it's interesting** · Hybrid retrieval (vector + BM25 + RRF + optional cross-encoder rerank + MMR). Gemini for cheap hot-path nodes, Bedrock for grounded generation. 50-query golden eval set with LLM-as-judge: the last full run scored 96% accuracy with a 6% hallucination rate, 91.5% / 92.1% retrieval precision/recall@k, 9.1 s p95 latency and $0.63 for the whole set. That is one run of a stochastic pipeline; the seven full runs that day ranged from 80% to 96% accuracy. Per-call cost is persisted at request time.
+**Result** · On eval run `b2b0899a` (50 golden questions), an LLM judge scored 96% answer accuracy and a 6% hallucination rate, with retrieval precision and recall of 91.5% and 92.1%, 9.1 s p95 latency and $0.63 for the whole set. It is one run of a stochastic pipeline: the seven full runs that day ranged from 80% to 96% accuracy, and the run predates the published snapshot. 58 offline tests run in CI on every push.
+
+**Why it's interesting** · Hybrid retrieval (vector + BM25 + RRF + optional cross-encoder rerank + MMR). Gemini for cheap hot-path nodes, Bedrock for grounded generation. Per-call cost is persisted at request time. The design decisions are recorded in four ADRs.
 
 [Repo →](https://github.com/FrancoCazal/WhisperDocs)
 
 ---
 
-## Skills
+### AgroBuy · AI procurement copilot for agricultural cooperatives
 
-**Backend** · Python · Django · DRF · Django Channels · FastAPI · Celery · LangGraph · LangChain
+*🏆 1st place · AI Tinkerers San Lorenzo x FIUNA Deep Dive 2026 · team of five. My part: backend, AI orchestration and the ML and scoring layer.* AgroBuy reads supplier quotations, scores each one against weather, exchange-rate and supplier-reliability signals, recommends one with its full breakdown, and drafts the negotiation email. It runs on AgroPredict AI, a multi-agent platform by Cristian Paniagua; I built the procurement backend on top of it, including the four LLM agents and the plain Python orchestrator that runs them.
 
-**Databases** · PostgreSQL · pgvector · Redis · Valkey · multi-tenancy (schema-per-tenant)
+**Stack** · Python · FastAPI · 4 LLM agents with deterministic fallbacks · scikit-learn (`GradientBoostingClassifier`) · PostgreSQL · React 19 · Oracle APEX (build guide) · Docker
 
-**Cloud / DevOps** · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES, Bedrock) · Terraform · Docker · GitHub Actions · Nginx · Gunicorn · Vector · CloudWatch
+**Result** · 1st place. 67 tests run without a database. The supplier on-time classifier scores AUC 0.748 on a held-out split of a synthetic delivery history (the demo has no real supplier records), so it shows the pipeline works end to end and says nothing about real suppliers; a rules-based fallback takes over when no model is loaded.
 
-**AI / ML** · OpenAI · Anthropic Claude (Bedrock) · Gemini (Vertex AI) · RAG · agentic workflows · hybrid retrieval · LLM evaluation · cost-aware routing
+**Why it's interesting** · Every agent has a deterministic fallback, so it produces valid outputs with no LLM available. The urgency and offer scores expose their full breakdown. One API designed for two clients: the React app and Oracle APEX, whose build guide is in the repo.
 
-**Frontend** · React · TypeScript · Vite · TanStack Query · Tailwind · Radix UI · Next.js
-
-**Observability** · Sentry · Prometheus · Grafana · structlog · Silk
+[Repo →](https://github.com/FrancoCazal/AgroBuy)
 
 ---
 
-## Education
+### Urban Attic · ecommerce platform
 
-**Industrial Engineering** · FIUNA · in progress (since 2022)
+*Solo · April 2026.* Full-stack store on Django REST Framework and React: JWT in HttpOnly cookies, a Redis cart, stock locked when the order is created, Stripe's hosted Checkout confirmed by a signed webhook, and transactional email sent from Celery.
 
-**Diploma in Machine Learning & Deep Learning** · FIUNA · completed · 2026 · final project: [Blindside](https://github.com/FrancoCazal/Blindside)
+**Stack** · Django 5 · DRF · PostgreSQL · Redis · Celery · Stripe · SendGrid · AWS S3 · React 18 + TypeScript · Vite · TanStack Query · Tailwind · Radix UI · Docker · Vercel
 
-**Foundations** · CoderHouse · 2024
-- Python · Cloud Computing (AWS)
+**Result** · 93 tests. CI runs them against Postgres 16 on every push and pull request and fails under 80% coverage (84% in a local run); a second job type-checks and builds the storefront.
 
-**Current depth**
-- Anthropic Academy: Claude API, Claude Code, MCP, agent design (2025)
+**Why it's interesting** · Atomic order creation with `select_for_update()` prevents overselling. `TimestampSigner`-based email verification and password reset: no token table, no cleanup job.
 
-**Self-taught**
-- Django REST Framework · FastAPI · LangGraph / LangChain · GraphQL
-- AI-augmented dev workflow (sub-agents, hooks, MCP, skills, statusline)
+[Repo →](https://github.com/FrancoCazal/UrbanAttic) · live demo offline while the backend moves to a new host
 
 ---
 
-## AWS ecosystem
+## Now
 
-- AWS Certified Cloud Practitioner · 2026
-- AWS Certified AI Practitioner · 2026
-- AWS Solutions Architect Associate · in progress
-- AWS for Startups · credit on Focal Point
-- AWS UG Paraguay · volunteer
-- Cloud Computing (AWS) · CoderHouse · 2024
-- Next: AWS ML/GenAI Specialty
+- Preparing the AWS Solutions Architect Associate (SAA-C03). Cloud Practitioner and AI Practitioner done in 2026.
+- Finished the FIUNA Machine Learning & Deep Learning diploma. Capstone: [Blindside](https://github.com/FrancoCazal/Blindside).
+- Two AI Tinkerers hackathons in 2026: [AgroBuy](https://github.com/FrancoCazal/AgroBuy), 1st place at San Lorenzo x FIUNA Deep Dive (April), and [SilentOps](https://github.com/FrancoCazal/SilentOps) at the Agents, Everywhere global hackathon (September).
+- Community: member of AI Tinkerers San Lorenzo and the FIUNA computing club, volunteer at AWS UG Paraguay, attendee at AI Tinkerers Asunción and GDG Asunción.
+
+---
+
+## Education & certifications
+
+**Certifications** · AWS Certified Cloud Practitioner (2026) · AWS Certified AI Practitioner (2026) · AWS Solutions Architect Associate (in progress)
+
+**Degrees & diplomas**
+- Diploma in Machine Learning & Deep Learning · FIUNA · completed 2026 · capstone: [Blindside](https://github.com/FrancoCazal/Blindside)
+- Industrial Engineering · FIUNA · since 2022 · expected 2027
+
+**Courses**
+- Anthropic Academy · Claude API, Claude Code, MCP, agent design · 2025
+- Python and Cloud Computing (AWS) · CoderHouse · 2024
+
+**Self-taught** · Django REST Framework · FastAPI · LangGraph · GraphQL, from the docs and shipped projects
 
 ---
 
@@ -143,8 +156,8 @@ Document Q&A with an explicit LangGraph state machine, hybrid retrieval, multi-p
 - Email · [contact@francocazal.com](mailto:contact@francocazal.com)
 - LinkedIn · [linkedin.com/in/francocazal](https://www.linkedin.com/in/francocazal)
 - GitHub · [@FrancoCazal](https://github.com/FrancoCazal)
-- Portfolio site · [francocazal.com](https://francocazal.com)
+- Portfolio site · [francocazal.com](https://francocazal.com) (English, with every page in Spanish under `/es`)
 
 ---
 
-<sub>This is my portfolio repo: depth on featured work. For the quick view see <a href="https://github.com/FrancoCazal">my profile</a>. For the full experience see <a href="https://francocazal.com">francocazal.com</a>. The featured projects each link to their own repo (or, for Focal Point and AgroBuy, a public case study; the source code is private).</sub>
+<sub>This is my portfolio repo: depth on featured work. For the quick view see <a href="https://github.com/FrancoCazal">my profile</a>. For the full experience see <a href="https://francocazal.com">francocazal.com</a>. Every featured project links to its public repo, except Focal Point: its code is private and it has a public case study.</sub>
