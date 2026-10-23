@@ -10,23 +10,35 @@ Lambaré, Paraguay · GMT-3 · remote · [francocazal.com](https://francocazal.c
 
 ## About
 
-I'm Franco Cazal, an AI & ML engineer. I build applied AI that holds up in production, and I own it end to end, from the data model and the evals to the deploy.
+**`$ whoami`**
 
-Based in Lambaré, Paraguay (GMT-3), working remote; most of my work is async with US and Spanish-speaking teams. Open to AI & ML, AI backend and cloud engineering roles. English (C2) · Spanish (native).
+> I'm Franco Cazal, an AI & ML engineer. I build applied AI that holds up in production, and I own it end to end, from the data model and the evals to the deploy.
 
-Daily driver: Claude Code with my own harness (sub-agents, hooks, MCP servers and skills). The public repos below were built with it.
+**`$ stack --by-domain`**
+
+| | What | Proof |
+|---|---|---|
+| **ai** | LangGraph agents, hybrid RAG (pgvector + BM25), golden-set evals, cost-aware model routing (Bedrock and Vertex AI in WhisperDocs) | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [SilentOps](https://github.com/FrancoCazal/SilentOps) |
+| **ml** | scikit-learn, gradient boosting (LightGBM), conformal prediction, rolling-origin backtests with leakage tests | [Blindside](https://github.com/FrancoCazal/Blindside) · [AgroBuy](https://github.com/FrancoCazal/AgroBuy) |
+| **backend** | Python (FastAPI, Django, Celery), PostgreSQL, Redis, schema-per-tenant isolation | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+| **cloud** | AWS (EC2, RDS, S3, SES) provisioned with Terraform, Docker, GitHub Actions | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+| **front** | React + TypeScript, when the product needs a front | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [Blindside](https://github.com/FrancoCazal/Blindside) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+
+**`$ available`**
+
+> Based in Lambaré, Paraguay (GMT-3), working remote; most of my work is async with US and Spanish-speaking teams. Open to AI & ML, AI backend and cloud engineering roles. English (C2) · Spanish (native).
 
 ---
 
-## Stack by domain
+## How I work
 
-| Domain | What | Proof |
-|---|---|---|
-| AI | LangGraph agents, hybrid RAG (pgvector + BM25), golden-set evals, cost-aware model routing (Bedrock and Vertex AI in WhisperDocs) | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [SilentOps](https://github.com/FrancoCazal/SilentOps) |
-| ML | scikit-learn, gradient boosting (LightGBM), conformal prediction, rolling-origin backtests with leakage tests | [Blindside](https://github.com/FrancoCazal/Blindside) · [AgroBuy](https://github.com/FrancoCazal/AgroBuy) |
-| Backend | Python (FastAPI, Django, Celery), PostgreSQL, Redis, schema-per-tenant isolation | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
-| Cloud | AWS (EC2, RDS, S3, SES) provisioned with Terraform, Docker, GitHub Actions | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [WhisperDocs](https://github.com/FrancoCazal/WhisperDocs) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
-| Front | React + TypeScript, when the product needs a front | [Focal Point](https://github.com/FrancoCazal/focalpoint-case-study) · [Blindside](https://github.com/FrancoCazal/Blindside) · [Urban Attic](https://github.com/FrancoCazal/UrbanAttic) |
+Every feature moves through the same loop: spec first, then code, review and CI. Only green tests deploy; then I measure and start again. Each practice below links to the public artifact that shows it.
+
+- **Spec before code** · SilentOps: the [spec](https://github.com/FrancoCazal/SilentOps/blob/main/SILENTOPS.md), the frozen contracts and the [file-ownership map](https://github.com/FrancoCazal/SilentOps/tree/main/team-docs) four people built against in parallel.
+- **Evals as tests** · WhisperDocs: a 50-query suite, [96% on the last full run](https://github.com/FrancoCazal/WhisperDocs/blob/main/eval/reports/2026-04-28_b2b0899a.md) · SilentOps: [15 golden cases](https://github.com/FrancoCazal/SilentOps/tree/main/packages/loop-core/evals), 5/15 on a live model · Blindside: [leakage tests](https://github.com/FrancoCazal/Blindside/blob/main/tests/test_leakage.py) in CI.
+- **CI and infra as code** · GitHub Actions runs the tests on WhisperDocs, SilentOps, Blindside and Urban Attic; Focal Point's AWS stack is [Terraform modules](https://github.com/FrancoCazal/focalpoint-case-study).
+- **Decisions written down** · WhisperDocs: [four ADRs](https://github.com/FrancoCazal/WhisperDocs/tree/main/docs/adr), from LangGraph to dual-provider routing.
+- **AI-augmented, on my own harness** · Claude Code with my own sub-agents, hooks, MCP servers and skills: the harness these repos were built with.
 
 ---
 
