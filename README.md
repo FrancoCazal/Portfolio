@@ -118,7 +118,7 @@ Custom software platforms for public and private institutions, built end to end:
 
 ## Now
 
-- Preparing the AWS Solutions Architect Associate (SAA-C03). Cloud Practitioner and AI Practitioner done in 2026.
+- AWS Certified Solutions Architect – Associate (October 2026), after Cloud Practitioner and AI Practitioner earlier in the year.
 - Finished the FIUNA Machine Learning & Deep Learning diploma. Capstone: [Blindside](https://github.com/FrancoCazal/Blindside).
 - Two AI Tinkerers hackathons in 2026: [AgroBuy](https://github.com/FrancoCazal/AgroBuy), 1st place at San Lorenzo x FIUNA Deep Dive (April), and [SilentOps](https://github.com/FrancoCazal/SilentOps) at the Agents, Everywhere global hackathon (September).
 - Community: member of AI Tinkerers San Lorenzo and the FIUNA computing club, volunteer at AWS UG Paraguay, attendee at AI Tinkerers Asunción and GDG Asunción.
@@ -127,7 +127,7 @@ Custom software platforms for public and private institutions, built end to end:
 
 ## Education & certifications
 
-**Certifications** · AWS Certified Cloud Practitioner (2026) · AWS Certified AI Practitioner (2026) · AWS Solutions Architect Associate (in progress)
+**Certifications** · AWS Certified Solutions Architect – Associate (2026) · AWS Certified AI Practitioner (2026) · AWS Certified Cloud Practitioner (2026)
 
 **Degrees & diplomas**
 - Diploma in Machine Learning & Deep Learning · FIUNA · completed 2026 · capstone: [Blindside](https://github.com/FrancoCazal/Blindside)
