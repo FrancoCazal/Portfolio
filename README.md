@@ -34,7 +34,7 @@ Custom software platforms for public and private institutions, built end to end:
 
 ### Focal Point · multi-tenant ERP SaaS with WhatsApp AI agents
 
-*Co-founder & Founding Engineer · Dec 2023 – Mar 2026 · production.* Schema-per-tenant ERP with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph agent that answers customers and creates quotes over WhatsApp. I co-founded Focal Point with my partners and led engineering end to end.
+*Co-founder & Founding Engineer · Dec 2023 – Mar 2026 · production.* Schema-per-tenant ERP with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph agent that answers customers and places real orders over WhatsApp. I co-founded Focal Point with my partners and led engineering end to end.
 
 **Stack** · Django 5 · DRF · Channels · Next.js · PostgreSQL 17 (`django-tenants`) · Valkey/Redis · LangGraph + OpenAI · Meta WhatsApp Cloud API · PagoPar · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES) · Terraform · GitHub Actions · Sentry + Prometheus + Grafana
 
