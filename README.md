@@ -22,8 +22,8 @@ Lambaré, Paraguay · GMT-3 · remote · [francocazal.com](https://francocazal.c
 
 ## Experience
 
-**Co-founder & Founding Engineer · Focal Point** · Dec 2023 – Mar 2026
-Multi-tenant ERP SaaS with production-grade agentic AI workflows. The company continues; my full-time tenure ended in March 2026.
+**Co-founder & Founding Engineer · Focal Point** · Dec 2023 – Sep 2026
+Multi-tenant ERP SaaS with production-grade agentic AI workflows. The company continues; my role ended in September 2026.
 
 **Freelance · Custom Platforms & Web** · Dec 2023 – now
 Custom software platforms for public and private institutions, built end to end: data model, backend, working frontends, data integration and ETL pipelines, deploys. Plus web development: websites and landing pages for businesses.
@@ -34,7 +34,7 @@ Custom software platforms for public and private institutions, built end to end:
 
 ### Focal Point · multi-tenant ERP SaaS with WhatsApp AI agents
 
-*Co-founder & Founding Engineer · Dec 2023 – Mar 2026 · production.* Schema-per-tenant ERP with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph agent that answers customers and places real orders over WhatsApp. I co-founded Focal Point with my partners and led engineering end to end.
+*Co-founder & Founding Engineer · Dec 2023 – Sep 2026 · production.* Schema-per-tenant ERP with inventory, sales, CRM, HR, finance, SIFEN-compliant electronic invoicing, and a LangGraph agent that answers customers and places real orders over WhatsApp. I co-founded Focal Point with my partners and led engineering end to end.
 
 **Stack** · Django 5 · DRF · Channels · Next.js · PostgreSQL 17 (`django-tenants`) · Valkey/Redis · LangGraph + OpenAI · Meta WhatsApp Cloud API · PagoPar · AWS (EC2, RDS, ElastiCache, S3, CloudFront, SES) · Terraform · GitHub Actions · Sentry + Prometheus + Grafana
 
